@@ -2,7 +2,8 @@
 # https://docs.fossorial.io/Pangolin/Configuration/config
 
 app:
-    dashboard_url: "http://localhost:3002"
+    # dashboard_url: "http://localhost:3002"
+    dashboard_url: "https://pangolin.civoncor.net"
     log_level: "info"
     save_logs: false
 
@@ -10,11 +11,15 @@ domains:
     domain1:
         base_domain: "civoncor.net"
         cert_resolver: "letsencrypt"
+        prefer_wildcard_cert: false
 
 server:
-    external_port: 3000
-    internal_port: 3001
-    next_port: 3002
+    # external_port: 3000
+    # internal_port: 3001
+    # next_port: 3002
+    external_port: 5000
+    internal_port: 5001
+    next_port: 5002
     internal_hostname: "pangolin"
     session_cookie_name: "p_session_token"
     resource_access_token_param: "p_token"
@@ -29,11 +34,12 @@ traefik:
 
 gerbil:
     start_port: 51820
-    base_endpoint: "localhost"
+    base_endpoint: "civoncor.net"
     block_size: 24
     site_block_size: 30
     subnet_group: 100.89.137.0/20
-    use_subdomain: true
+    # use_subdomain: true
+    use_subdomain: false
 
 rate_limits:
     global:
@@ -43,11 +49,22 @@ rate_limits:
 users:
     server_admin:
         email: "akash.cs@civoncor.com"
-        password: "Akash@sh1vankar"
+        password: "G0spel.L1fe"
+
+# Optional Setups
 
 flags:
-    require_email_verification: false
+    require_email_verification: true
     disable_signup_without_invite: true
     disable_user_create_org: true
     allow_raw_resources: true
     allow_base_domain_resources: true
+
+email:
+    smtp_host: "mail.shivankar.com"
+    smtp_port: "465"
+    smtp_user: "akash.cs@civoncor.com"
+    smtp_pass: "G0spel.L1fe"
+    smtp_secure: true
+    no_reply: "no-reply@civoncor.com"
+    smtp_tls_reject_unauthorized: false
