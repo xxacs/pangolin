@@ -62,7 +62,7 @@ flags:
 
 email:
     smtp_host: "mail.shivankar.com"
-    smtp_port: "465"
+    smtp_port: 465
     smtp_user: "akash.cs@civoncor.com"
     smtp_pass: "G0spel.L1fe"
     smtp_secure: true
