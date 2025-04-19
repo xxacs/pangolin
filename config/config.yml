@@ -42,8 +42,8 @@ rate_limits:
 
 users:
     server_admin:
-        email: "admin@civoncor.net"
-        password: "Password123!"
+        email: "akash.cs@civoncor.com"
+        password: "Akash@sh1vankar"
 
 flags:
     require_email_verification: false
